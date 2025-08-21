@@ -26,6 +26,10 @@ open class BaseViewModel {
     /// The current state of the view.
     public var state: ViewState = .idle
     
+    public init(state: ViewState = .idle) {
+        self.state = state
+    }
+    
     
 }
 
