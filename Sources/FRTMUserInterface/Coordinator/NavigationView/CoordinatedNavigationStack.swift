@@ -55,10 +55,13 @@ public struct CoordinatedNavigationStack<Content: View, Destination: View, R: Ro
                     destination(route)
                         .environment(\.presentationStyle, .sheet)
                 }
+            #if os(iOS) || os(tvOS)
                 .fullScreenCover(item: $coordinator.fullScreenCover) { route in
                     destination(route)
                         .environment(\.presentationStyle, .fullScreenCover)
                 }
+            #endif
+            
         }
         .environmentObject(coordinator)
     }
